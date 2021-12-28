@@ -1,0 +1,21 @@
+Package: mnbrand
+Type: Package
+Title: State of Minnesota Colors and Branding
+Version: 0.1.0
+Authors@R: 
+    person("Josh", "Fangmeier", , "joshua.fangmeier@state.mn.us", role = c("aut", "cre"))
+Description: Functions to apply State of Minnesota brand colors and style in ggplot2.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.2
+Imports: 
+    magrittr,
+    dplyr,
+    ggplot2,
+    tibble,
+    colorspace,
+    shadowtext
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
