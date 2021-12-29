@@ -23,6 +23,19 @@ You can install the development version of mnbrand from
 devtools::install_github("jfangmeier/mnbrand")
 ```
 
+## Available Colors
+
+The full list of brand colors is available with the `show_palette_mn`
+function.
+
+``` r
+library(mnbrand)
+
+show_palette_mn()
+```
+
+<img src="man/figures/README-show_palette-1.png" width="100%" />
+
 ## Plot Examples
 
 The mnbrand package can apply discrete palette colors (up to 10 colors)
@@ -31,7 +44,6 @@ being plotted. Here is an example using discrete colors with the
 `scale_color_mn_d` function:
 
 ``` r
-library(mnbrand)
 library(ggplot2)
 
 mtcars %>%
@@ -76,7 +88,7 @@ mn_counties_pct_water %>%
   geom_sf() +
   scale_fill_mn_c() +
   theme_minimal() +
-  labs(title = "Share of Area Covered by Water")
+  labs(title = "Share of County Covered by Water")
 ```
 
 <img src="man/figures/README-example2-1.png" width="100%" />
@@ -95,18 +107,7 @@ mn_counties_pct_water %>%
     midpoint = 0.2
   ) +
   theme_minimal() +
-  labs(title = "Share of Area Covered by Water")
+  labs(title = "Share of County Covered by Water")
 ```
 
 <img src="man/figures/README-example3-1.png" width="100%" />
-
-## Available Colors
-
-The full list of brand colors is available with the `show_palette_mn`
-function.
-
-``` r
-show_palette_mn()
-```
-
-<img src="man/figures/README-show_palette-1.png" width="100%" />

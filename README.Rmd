@@ -8,6 +8,7 @@ output: github_document
 knitr::opts_chunk$set(
   collapse = TRUE,
   warning = FALSE,
+  dpi = 300,
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%"
@@ -31,12 +32,21 @@ You can install the development version of mnbrand from [GitHub](https://github.
 devtools::install_github("jfangmeier/mnbrand")
 ```
 
+## Available Colors
+
+The full list of brand colors is available with the `show_palette_mn` function.
+
+```{r show_palette}
+library(mnbrand)
+
+show_palette_mn()
+```
+
 ## Plot Examples
 
 The mnbrand package can apply discrete palette colors (up to 10 colors) and continuous palette colors in ggplot2, depending on the variables being plotted. Here is an example using discrete colors with the `scale_color_mn_d` function:
 
 ```{r example1}
-library(mnbrand)
 library(ggplot2)
 
 mtcars %>%
@@ -65,7 +75,7 @@ mn_counties_pct_water %>%
   geom_sf() +
   scale_fill_mn_c() +
   theme_minimal() +
-  labs(title = "Share of Area Covered by Water")
+  labs(title = "Share of County Covered by Water")
 ```
 
 Here is an example with diverging colors with a specified diverging point and colors:
@@ -81,14 +91,5 @@ mn_counties_pct_water %>%
     midpoint = 0.2
   ) +
   theme_minimal() +
-  labs(title = "Share of Area Covered by Water")
+  labs(title = "Share of County Covered by Water")
 ```
-
-## Available Colors
-
-The full list of brand colors is available with the `show_palette_mn` function.
-
-```{r show_palette}
-show_palette_mn()
-```
-
