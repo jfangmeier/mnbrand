@@ -9,36 +9,36 @@
 \usage{
 scale_color_mn_c(
   diverge = FALSE,
-  high_index = "minnesota_blue",
-  low_index = "minnesota_green",
+  high_color = "minnesota_blue",
+  low_color = "minnesota_green",
   color_range = 0.75,
   ...
 )
 
 scale_colour_mn_c(
   diverge = FALSE,
-  high_index = "minnesota_blue",
-  low_index = "minnesota_green",
+  high_color = "minnesota_blue",
+  low_color = "minnesota_green",
   color_range = 0.75,
   ...
 )
 
 scale_fill_mn_c(
   diverge = FALSE,
-  high_index = "minnesota_blue",
-  low_index = "minnesota_green",
+  high_color = "minnesota_blue",
+  low_color = "minnesota_green",
   color_range = 0.75,
   ...
 )
 }
 \arguments{
-\item{diverge}{logical value to indicate whether color values should diverge.}
+\item{diverge}{logical value to indicate whether color values should diverge. Defaults to FALSE.}
 
-\item{high_index}{character color name for high values (e.g., "minnesota_blue"). See `show_palette_mn` for all names.}
+\item{high_color}{character color name or index value for high values. Defaults to "minnesota_blue". See `show_palette_mn` for all names.}
 
-\item{low_index}{character color name for low values (e.g., "minnesota_green").}
+\item{low_color}{character color name or index value for low values. Defaults to "minnesota_green".}
 
-\item{color_range}{numeric specifying the amount of lightening. Negative numbers cause darkening.}
+\item{color_range}{numeric specifying the amount of lightening. Negative numbers cause darkening. Defaults to 0.75.}
 
 \item{...}{Arguments to pass on to `ggplot2::scale_color_gradient` (non-diverging) or
 `ggplot2::scale_color_gradient2` (diverging)}
