@@ -54,10 +54,10 @@ scale_fill_mn_d <- function(...) {
 #'
 #' Available State of Minnesota color names are available in the `show_palette_mn` function.
 #'
-#' @param high_index character color name for high values (e.g., "minnesota_blue"). See `show_palette_mn` for all names.
-#' @param low_index character color name for low values (e.g., "minnesota_green").
-#' @param diverge logical value to indicate whether color values should diverge.
-#' @param color_range numeric specifying the amount of lightening. Negative numbers cause darkening.
+#' @param high_color character color name or index value for high values. Defaults to "minnesota_blue". See `show_palette_mn` for all names.
+#' @param low_color character color name or index value for low values. Defaults to "minnesota_green".
+#' @param diverge logical value to indicate whether color values should diverge. Defaults to FALSE.
+#' @param color_range numeric specifying the amount of lightening. Negative numbers cause darkening. Defaults to 0.75.
 #' @param ... Arguments to pass on to `ggplot2::scale_color_gradient` (non-diverging) or
 #' `ggplot2::scale_color_gradient2` (diverging)
 #'
@@ -80,30 +80,30 @@ scale_fill_mn_d <- function(...) {
 #'
 scale_color_mn_c <- function(
   diverge = FALSE,
-  high_index = "minnesota_blue",
-  low_index = "minnesota_green",
+  high_color = "minnesota_blue",
+  low_color = "minnesota_green",
   color_range = 0.75,
   ...){
 
   if(diverge){
 
-    high_color <- mn_colors(high_index)
-    low_color <- mn_colors(low_index)
+    high_mn <- mn_colors(high_color)
+    low_mn <- mn_colors(low_color)
 
     ggplot2::scale_color_gradient2(
-      low = low_color,
-      high = high_color,
+      low = low_mn,
+      high = high_mn,
       ...
     )
 
   } else {
 
-    high_color <- mn_colors(high_index)
-    low_color <- colorspace::lighten(high_color, amount = color_range)
+    high_mn <- mn_colors(high_color)
+    low_mn <- colorspace::lighten(high_mn, amount = color_range)
 
     ggplot2::scale_color_gradient(
-      low = low_color,
-      high = high_color,
+      low = low_mn,
+      high = high_mn,
       ...
     )
 
@@ -123,30 +123,30 @@ scale_colour_mn_c <- scale_color_mn_c
 #'
 scale_fill_mn_c <- function(
   diverge = FALSE,
-  high_index = "minnesota_blue",
-  low_index = "minnesota_green",
+  high_color = "minnesota_blue",
+  low_color = "minnesota_green",
   color_range = 0.75,
   ...){
 
   if(diverge){
 
-    high_color <- mn_colors(high_index)
-    low_color <- mn_colors(low_index)
+    high_mn <- mn_colors(high_color)
+    low_mn <- mn_colors(low_color)
 
     ggplot2::scale_fill_gradient2(
-      low = low_color,
-      high = high_color,
+      low = low_mn,
+      high = high_mn,
       ...
     )
 
   } else {
 
-    high_color <- mn_colors(high_index)
-    low_color <- colorspace::lighten(high_color, amount = color_range)
+    high_mn <- mn_colors(high_color)
+    low_mn <- colorspace::lighten(high_mn, amount = color_range)
 
     ggplot2::scale_fill_gradient(
-      low = low_color,
-      high = high_color,
+      low = low_mn,
+      high = high_mn,
       ...
     )
 
