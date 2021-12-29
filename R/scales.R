@@ -68,6 +68,7 @@ scale_fill_mn_d <- function(...) {
 #'
 #' @importFrom ggplot2 scale_color_gradient scale_color_gradient2
 #' @importFrom colorspace lighten
+#' @importFrom rlang abort
 #'
 #' @examples
 #'
@@ -84,8 +85,20 @@ scale_color_mn_c <- function(
   low_color = "minnesota_green",
   color_range = 0.75,
   ...){
+  
+  if(!is.logical(diverge)){
+    rlang::abort("diverge must be a logical value (TRUE/FALSE)")
+  }
+  
+  if(!high_color %in% 1:length(mn_color_names()) & !high_color %in% mn_color_names()){
+    rlang::abort("high_color must a valid name ('minnesota_blue') or index value of a palette color")
+  }
 
   if(diverge){
+    
+    if(!low_color %in% 1:length(mn_color_names()) & !low_color %in% mn_color_names()){
+      rlang::abort("low_color must a valid name ('minnesota_blue') or index value of a palette color")
+    }
 
     high_mn <- mn_colors(high_color)
     low_mn <- mn_colors(low_color)
@@ -97,6 +110,10 @@ scale_color_mn_c <- function(
     )
 
   } else {
+    
+    if(!is.numeric(color_range)){
+      rlang::abort("color_range must be a numeric value")
+    }
 
     high_mn <- mn_colors(high_color)
     low_mn <- colorspace::lighten(high_mn, amount = color_range)
@@ -127,8 +144,20 @@ scale_fill_mn_c <- function(
   low_color = "minnesota_green",
   color_range = 0.75,
   ...){
+  
+  if(!is.logical(diverge)){
+    rlang::abort("diverge must be a logical value (TRUE/FALSE)")
+  }
+  
+  if(!high_color %in% 1:length(mn_color_names()) & !high_color %in% mn_color_names()){
+    rlang::abort("high_color must a valid name ('minnesota_blue') or index value of a palette color")
+  }
 
   if(diverge){
+    
+    if(!low_color %in% 1:length(mn_color_names()) & !low_color %in% mn_color_names()){
+      rlang::abort("low_color must a valid name ('minnesota_blue') or index value of a palette color")
+    }
 
     high_mn <- mn_colors(high_color)
     low_mn <- mn_colors(low_color)
@@ -140,6 +169,10 @@ scale_fill_mn_c <- function(
     )
 
   } else {
+    
+    if(!is.numeric(color_range)){
+      rlang::abort("color_range must be a numeric value")
+    }
 
     high_mn <- mn_colors(high_color)
     low_mn <- colorspace::lighten(high_mn, amount = color_range)

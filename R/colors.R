@@ -1,3 +1,4 @@
+#' @importFrom rlang abort
 .mn_colors <- c(
   minnesota_blue = "#003865",
   minnesota_green = "#78BE21",
@@ -36,7 +37,11 @@ mn_palette <- function() {
   mn_color_length <- length(mn_colors())
 
   function(n) {
-    stopifnot(n <= mn_color_length)
+    if (n > mn_color_length) {
+      rlang::abort(paste0("discrete values must be fewer than ", mn_color_length))
+    }
+    
+    # stopifnot(n <= mn_color_length)
 
     color_indices <-
       if (n == 1) { "minnesota_blue" }
