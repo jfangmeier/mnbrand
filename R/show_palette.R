@@ -19,7 +19,7 @@ show_palette_mn <- function(){
     tibble::enframe() %>%
     dplyr::mutate(row = dplyr::row_number() * -1) %>%
     ggplot2::ggplot(
-      ggplot2::aes_string(x = row, y = 1, fill = "value", label = "name")) +
+      ggplot2::aes_string(x = "row", y = 1, fill = "value", label = "name")) +
     ggplot2::geom_col() +
     ggplot2::scale_fill_identity() +
     ggplot2::coord_flip() +
