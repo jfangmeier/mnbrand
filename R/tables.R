@@ -1,15 +1,15 @@
 #' Format a flextable object for a Word or PowerPoint document
 #'
-#' This function provide the option to apply State of Minnesota template table formatting 
-#' to flextable objects that can be rendered in R Markdown to Word or PowerPoint. 
+#' This function applies formatting to flextable objects, using the State of Minnesota template for tables, 
+#' which can be rendered in R Markdown to Word or PowerPoint. 
 #' This function applies the theme only to existing elements when the function is called, and
 #' it should be applied only after all elements of the table have been added.
 #'
 #' @param ft_tbl flextable object created using the flextable package
 #' @param last_row_bold logical value to indicate whether the last row should be bold. Defaults to FALSE.
-#' @param color string value to apply color scheme. Defaults to "gray". Other options include "blue" and "green".
-#' @param fontsize numeric value to set the size of all fonts in the table. Defaults to 11.
-#' @param borders string value to indicate whether borders are "narrow" or "thick". Defaults to "narrow".
+#' @param color string value to apply color scheme. Defaults to "gray". Other options include "blue" and "green". Word documents should use "gray".
+#' @param fontsize numeric value to set the size of all fonts in the table. Defaults to 11. Word documents should use size 11.
+#' @param borders string value to indicate whether borders are "narrow" or "thick". Defaults to "narrow". Word documents should use "narrow".
 #'
 #' @return A `flextable` object
 #'
