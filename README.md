@@ -9,9 +9,10 @@
 The goal of **mnbrand** is to make it easier to implement the [official
 State of Minnesota color
 palette](https://mn.gov/portal/brand/style-guide/colors/) in ggplot2.
-Future versions of this package will include other functions/templates
-to implement the State of Minnesota branding in reports and other data
-products.
+This package also includes a theme function for flextable to create
+tables in R Markdown for Word and PowerPoint. Future versions of this
+package will include other functions/templates to implement the State of
+Minnesota branding in reports and other data products.
 
 ## Installation
 
