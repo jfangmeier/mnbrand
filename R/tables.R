@@ -13,10 +13,10 @@
 #'
 #' @return A `flextable` object
 #'
-#' @name flextable_format
-#' @rdname flextable_format
+#' @name theme_flextable
+#' @rdname theme_flextable
 #'
-#' @importFrom flextable fontsize font bold bg align border_remove border_outer border_inner padding
+#' @importFrom flextable fontsize font bold bg align border_remove border_outer border_inner padding align_text_col align_nottext_col
 #' @importFrom officer fp_border
 #' @importFrom rlang abort
 #'
